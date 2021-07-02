@@ -1,9 +1,9 @@
-import { AppBar, Typography, Button, Toolbar } from '@material-ui/core';
+import { AppBar, Typography, Button, Toolbar } from "@material-ui/core";
 
 
  function Header() {
     return (
-        <AppBar>
+        <AppBar position="static">
             <Toolbar>
                 <Typography variant="h3" edge="start">
                 Google Books Search
