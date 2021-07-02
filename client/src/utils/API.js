@@ -1,7 +1,7 @@
-// import axios from "axios";
+import axios from "axios";
 
-// export default {
-//     generateSearch: function(search) {
-//         return axios.get('https://www.googleapis.com/books/v1/volumes?q=search+terms');
-//     }
-// }
+export default {
+    generateSearch: function(search) {
+        return axios.get(`https://www.googleapis.com/books/v1/volumes?q=${search}`);
+    }
+}
