@@ -11,6 +11,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 const useStyles = makeStyles({
     root: {
         display: 'flex',
+        margin: 10,
       },
       details: {
         display: 'flex',
@@ -21,6 +22,7 @@ const useStyles = makeStyles({
       },
       cover: {
         width: 151,
+        margin: 10,
       },
   });
   

@@ -1,9 +1,18 @@
 import { Input, Container, Button } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles({
+    root: {
+        margin: 10,
+      },
+  });
 
 function SearchForm({ search, handleInputChange, handleFormSubmit }) {  
+    const classes = useStyles();
+
     return (
-        <Container>
-            <form>
+        <Container className={classes.root}>
+            <form onSubmit={handleFormSubmit}>
                 <Input fullWidth
                     placeholder="Search by Title, Author, Keywords, etc."
                     type="search"
@@ -11,12 +20,11 @@ function SearchForm({ search, handleInputChange, handleFormSubmit }) {
                     value={search}
                     onChange={handleInputChange}
                     inputProps={{ 'aria-label': 'book keywords' }}
-
                 />
                 <Button 
                     variant="contained"
                     color="primary"
-                    onClick={handleFormSubmit}
+                    type="submit"
                 >Search</Button>
             </form>
         </Container>
