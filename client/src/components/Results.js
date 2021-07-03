@@ -12,54 +12,63 @@ const useStyles = makeStyles({
     root: {
         display: 'flex',
         margin: 10,
-      },
-      details: {
+    },
+    details: {
         display: 'flex',
         flexDirection: 'column',
-      },
-      content: {
+    },
+    content: {
         flex: '1 0 auto',
-      },
-      cover: {
+    },
+    cover: {
         width: 151,
         margin: 10,
-      },
-  });
-  
+    },
+});
+
 
 function Results({ results }) {
     const classes = useStyles();
 
     return (
-        <Grid container>
+        <Grid container alignItems="center" justify="center">
             {results.length ? (
-            <div>
-                {results.map(book => {
-                    return (
-                        <Grid item key={book.id}>
-                            <Card className={classes.root}>
-                                <CardMedia
-                                    className={classes.cover}
-                                    image={book.volumeInfo.imageLinks.smallThumbnail}
-                                    title="Live from space album cover"
-                                />
-                                <div className={classes.details}>
-                                    <CardContent className={classes.content}>
-                                    <Typography component="h5" variant="h5">
-                                        {book.volumeInfo.title}
-                                    </Typography>
-                                    <Typography variant="subtitle1" color="textSecondary">
-                                        {book.volumeInfo.authors}
-                                    </Typography>
-                                    </CardContent>
-                                </div>
-                            </Card>
-                        </Grid>
-                    );
-                })}
-            </div>
+                <div>
+                    {results.map(book => {
+                        return (
+                            <Grid item key={book.id}>
+                                <Card className={classes.root}>
+                                    <CardMedia
+                                        className={classes.cover}
+                                        image={book.volumeInfo.imageLinks.smallThumbnail}
+                                        title="Live from space album cover"
+                                    />
+                                    <div className={classes.details}>
+                                        <CardContent className={classes.content}>
+                                            <Typography component="h5" variant="h5">
+                                                {book.volumeInfo.title}
+                                            </Typography>
+                                            <Typography variant="subtitle1" color="textSecondary">
+                                                {book.volumeInfo.authors}
+                                            </Typography>
+                                        </CardContent>
+                                    </div>
+                                </Card>
+                            </Grid>
+                        );
+                    })}
+                </div>
             ) : (
-                <h3>No results</h3>
+                <Card className={classes.root}>
+                    <CardContent>
+                        <Typography component="h2" varient="h2" align="center" gutterBottom>
+                            No Results
+                        </Typography>
+                        <Typography color="textSecondary" variant="body1" component="p">
+                            Please try different search terms.
+                        </Typography>
+                    </CardContent>
+                </Card>
             )}
         </Grid>
     );

@@ -4,10 +4,10 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles({
     root: {
         margin: 10,
-      },
-  });
+    },
+});
 
-function SearchForm({ search, handleInputChange, handleFormSubmit }) {  
+function SearchForm({ search, handleInputChange, handleFormSubmit }) {
     const classes = useStyles();
 
     return (
@@ -21,7 +21,7 @@ function SearchForm({ search, handleInputChange, handleFormSubmit }) {
                     onChange={handleInputChange}
                     inputProps={{ 'aria-label': 'book keywords' }}
                 />
-                <Button 
+                <Button
                     variant="contained"
                     color="primary"
                     type="submit"
