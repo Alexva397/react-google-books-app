@@ -1,5 +1,5 @@
 import { AppBar, Typography, Button, Toolbar } from "@material-ui/core";
-
+import { Link } from "react-router-dom";
 
  function Header() {
     return (
@@ -8,8 +8,8 @@ import { AppBar, Typography, Button, Toolbar } from "@material-ui/core";
                 <Typography variant="h3" edge="start">
                 Google Books Search
                 </Typography>
-                <Button color="inherit">Search</Button>
-                <Button color="inherit">Saved</Button>
+                <Button component={Link} to="/" color="inherit">Search</Button>
+                <Button component={Link} to="/saved" color="inherit">Saved</Button>
             </Toolbar>
         </AppBar>
 
