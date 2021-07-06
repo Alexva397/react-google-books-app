@@ -17,7 +17,7 @@ function SearchForm({ search, handleInputChange, handleFormSubmit }) {
                     placeholder="Search by Title, Author, Keywords, etc."
                     type="search"
                     style={{ margin: 8 }}
-                    value={search}
+                    value={search || ""}
                     onChange={handleInputChange}
                     inputProps={{ 'aria-label': 'book keywords' }}
                 />
