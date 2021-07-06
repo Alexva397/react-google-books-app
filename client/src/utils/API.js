@@ -1,7 +1,23 @@
 import axios from "axios";
 
-export default {
+const apiCalls = {
+    // search google books api
     generateSearch: function(search) {
         return axios.get(`https://www.googleapis.com/books/v1/volumes?q=${search}`);
+    },
+    // get all saved books
+    generateSaved: function() {
+        return axios.get("/api/saved");
+    },
+    // post book to db
+    saveBook: function(bookData) {
+        return axios.post("/$api/saved", bookData);
+    },
+    deleteBook: function(id) {
+        return axios.delete(`/api/saved/${id}`);
     }
+
 }
+
+
+export default apiCalls;
