@@ -8,7 +8,7 @@ function Search() {
     const [results, setResults] = useState([]);
 
 
-    const searchBooks = async (searchInput) => {
+    const searchBooks = (searchInput) => {
         API.generateSearch(searchInput)
             .then(res => {
                 console.log(res.data.items)
@@ -29,6 +29,17 @@ function Search() {
         searchBooks(search);
     }
 
+    const handleBookSave = (index) => {
+        console.log(results[index])
+        API.saveBook({
+            title: results[index].volumeInfo.title,
+            authors: results[index].volumeInfo.authors,
+            description: results[index].volumeInfo.description,
+            image: results[index].volumeInfo.imageLinks.smallThumbnail,
+            link: results[index].volumeInfo.infoLink,
+        })
+        .catch(error => console.log(error));
+    }
 
 
     return (
@@ -42,6 +53,7 @@ function Search() {
             <div>
                 <Results 
                     results={results}
+                    handleBookSave={handleBookSave}
                 />
             </div>
         </>

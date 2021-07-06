@@ -11,13 +11,13 @@ const apiCalls = {
     },
     // post book to db
     saveBook: function(bookData) {
-        return axios.post("/$api/saved", bookData);
+        return axios.post("/api/saved", bookData);
     },
+    // delete book by id
     deleteBook: function(id) {
         return axios.delete(`/api/saved/${id}`);
-    }
-
-}
+    },
+};
 
 
 export default apiCalls;

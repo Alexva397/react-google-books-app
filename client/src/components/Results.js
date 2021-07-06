@@ -27,14 +27,14 @@ const useStyles = makeStyles({
     },
 });
 
-function Results({ results }) {
+function Results({ results, handleBookSave }) {
     const classes = useStyles();
 
     return (
         <Grid container alignItems="center" justify="center">
             {results.length ? (
                 <div>
-                    {results.map(book => {
+                    {results.map((book, index) => {
                         return (
                             <Grid item key={book.id}>
                                 <Card className={classes.root} variant="outlined">
@@ -53,10 +53,10 @@ function Results({ results }) {
                                             </Typography>
                                         </CardContent>
                                         <CardActions>
-                                            <Button variant="contained" color="primary" href={book.volumeInfo.canonicalVolumeLink}>
+                                            <Button variant="contained" color="primary" href={book.volumeInfo.infoLink}>
                                                 View
                                             </Button>
-                                            <Button variant="contained" color="primary" href="#contained-buttons">
+                                            <Button variant="contained" color="primary" onClick={() => handleBookSave(index)}>
                                                 Save
                                             </Button>
                                         </CardActions>
