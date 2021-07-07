@@ -35,7 +35,7 @@ function Search() {
             title: results[index].volumeInfo.title,
             authors: results[index].volumeInfo.authors,
             description: results[index].volumeInfo.description,
-            image: results[index].volumeInfo.imageLinks.smallThumbnail,
+            image: results[index].volumeInfo.imageLinks === undefined ? "https://via.placeholder.com/200" : results[index].volumeInfo.imageLinks.smallThumbnail,
             link: results[index].volumeInfo.infoLink,
         })
         .catch(error => console.log(error));
