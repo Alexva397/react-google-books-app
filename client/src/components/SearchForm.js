@@ -11,7 +11,7 @@ function SearchForm({ search, handleInputChange, handleFormSubmit }) {
     const classes = useStyles();
 
     return (
-        <Container className={classes.root}>
+        <Container className={classes.root} >
             <form onSubmit={handleFormSubmit}>
                 <Input fullWidth
                     placeholder="Search by Title, Author, Keywords, etc."

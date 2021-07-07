@@ -4,7 +4,7 @@ module.exports = {
     findAll: function(req, res) {
         db.Book
             .find(req.query)
-            .sort({ title: -1 })
+            .sort({ title: 1 })
             .then(bookData => res.json(bookData))
             .catch(err => res.status(422).json(err));
     },
