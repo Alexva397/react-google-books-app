@@ -3,7 +3,7 @@ import { Grid, Card, CardActions, CardContent, Button, Typography, CardMedia} fr
 
 const useStyles = makeStyles({
     root: {
-        maxWidth: 900,
+        width: 800,
         display: "flex",
         margin: 10,
     },
@@ -12,10 +12,12 @@ const useStyles = makeStyles({
         flexDirection: "column",
     },
     content: {
+        width: 400,
         flex: "1 0 auto",
     },
     cover: {
-        width: 400,
+        width: 200,
+        height: 300,
         margin: 10,
     },
 });
@@ -27,6 +29,7 @@ function SavedCard({ deleteBook, _id, title, image, authors, description, link }
         <Grid item key={_id}>
             <Card className={classes.root} variant="outlined">
                 <CardMedia
+                    
                     className={classes.cover}
                     image={image}
                     title={title}
@@ -41,9 +44,9 @@ function SavedCard({ deleteBook, _id, title, image, authors, description, link }
                                     return <span key={index}> {author}{index < authors.length - 1 ? "," : ""}</span>;
                             })}
                         </Typography>
-                        <Typography variant="body2" color="textSecondary">
-                            {description}
-                        </Typography>
+                            <Typography component="p" color="textSecondary">
+                                {description}
+                            </Typography>
                     </CardContent>
                     <CardActions>
                         <Button variant="contained" color="primary" href={link}>
@@ -55,6 +58,42 @@ function SavedCard({ deleteBook, _id, title, image, authors, description, link }
                     </CardActions>
                 </div>
             </Card>
+
+            {/* <Card className={classes.root} variant="outlined">
+                <Grid container direction="row">
+                    <CardMedia
+                        className={classes.cover}
+                        image={image}
+                        title={title}
+                    />
+                    <div className={classes.details}>
+                        <CardContent className={classes.content}>
+                            <Typography component="h5" variant="h5">
+                                {title}
+                            </Typography>
+                            <Typography variant="subtitle1" color="textSecondary">
+                                {authors === undefined ? "No listed authors." : authors.map((author, index) => {
+                                        return <span key={index}> {author}{index < authors.length - 1 ? "," : ""}</span>;
+                                })}
+                            </Typography>
+                            <Typography component="p" color="textSecondary">
+                                {description}
+                            </Typography>
+                        </CardContent>
+                        <CardActions>
+                            <Button variant="contained" color="primary" href={link}>
+                                View
+                            </Button>
+                            <Button variant="contained" color="secondary" onClick={() => deleteBook(_id)}>
+                                Delete
+                            </Button>
+                        </CardActions>
+                    </div>
+                </Grid>
+            </Card> */}
+
+
+
         </Grid>
     );
 }
