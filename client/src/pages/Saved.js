@@ -69,7 +69,9 @@ function Saved() {
                                                 {book.title}
                                             </Typography>
                                             <Typography variant="subtitle1" color="textSecondary">
-                                                {book.authors}
+                                                {book.authors === undefined ? "No listed authors." : book.authors.map((author, index) => {
+                                                        return <span key={index}> {author}{index < book.authors.length - 1 ? "," : ""}</span>;
+                                                })}
                                             </Typography>
                                         </CardContent>
                                         <CardActions>
