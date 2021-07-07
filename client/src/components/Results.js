@@ -1,22 +1,23 @@
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from "@material-ui/core/styles";
 import { Grid, Card, CardActions, CardContent, Button, Typography, CardMedia } from "@material-ui/core";
 
 const useStyles = makeStyles({
     root: {
         maxWidth: 600,
-        display: 'flex',
+        display: "flex",
         margin: 10,
     },
     details: {
-        display: 'flex',
-        flexDirection: 'column',
+        display: "flex",
+        flexDirection: "column",
     },
     content: {
-        flex: '1 0 auto',
+        flex: "1 0 auto",
     },
     cover: {
         width: 151,
         margin: 10,
+        border: "solid 10 black"
     },
 });
 
