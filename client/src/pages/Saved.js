@@ -44,6 +44,12 @@ function Saved() {
             .catch(err => console.log(err));
     }
 
+    const deleteBook = (id) => {
+        API.deleteBook(id)
+            .then(res => loadSaved())
+            .catch(err => console.log(err));
+    }
+
     return (
         <Grid container alignItems="center" justify="center">
             {saved.length ? (
@@ -70,7 +76,7 @@ function Saved() {
                                             <Button variant="contained" color="primary" href={book.link}>
                                                 View
                                             </Button>
-                                            <Button variant="contained" color="secondary">
+                                            <Button variant="contained" color="secondary" onClick={() => deleteBook(book._id)}>
                                                 Delete
                                             </Button>
                                         </CardActions>

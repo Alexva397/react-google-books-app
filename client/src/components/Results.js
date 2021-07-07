@@ -40,7 +40,7 @@ function Results({ results, handleBookSave }) {
                                 <Card className={classes.root} variant="outlined">
                                     <CardMedia
                                         className={classes.cover}
-                                        image={book.volumeInfo.imageLinks.smallThumbnail}
+                                        image={book.volumeInfo.imageLinks === undefined ? "https://via.placeholder.com/200" : book.volumeInfo.imageLinks.smallThumbnail}
                                         title={book.volumeInfo.title}
                                     />
                                     <div className={classes.details}>
@@ -53,7 +53,7 @@ function Results({ results, handleBookSave }) {
                                             </Typography>
                                         </CardContent>
                                         <CardActions>
-                                            <Button variant="contained" color="primary" href={book.volumeInfo.infoLink}>
+                                            <Button variant="contained" href={book.volumeInfo.infoLink}>
                                                 View
                                             </Button>
                                             <Button variant="contained" color="primary" onClick={() => handleBookSave(index)}>
