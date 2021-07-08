@@ -25,11 +25,11 @@ You can test this app at the link above, or follow the instructions in installat
 
 
 
-![Screenshot1](./screenshots/screenshot1.png)
+![screenshot1](./screenshots/screenshot1.png)
 
 
 
-![Screenshot2](./screenshots/screenshot2.png)
+![screenshot2](./screenshots/screenshot2.png)
 
 
 
